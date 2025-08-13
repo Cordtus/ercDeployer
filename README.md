@@ -2,7 +2,7 @@
 
 A production-ready Node.js script for deploying multiple ERC20 tokens with custom parameters to any EVM-compatible blockchain.
 
-## Features
+## Testnet erc20 deployer
 
 - **Batch Deployment**: Deploy multiple ERC20 tokens in a single execution
 - **Customizable Parameters**: Configure each token's name, symbol, decimals, and initial supply
@@ -12,12 +12,6 @@ A production-ready Node.js script for deploying multiple ERC20 tokens with custo
 - **Gas Optimization**: Automatic gas estimation with configurable buffer
 - **Deployment Reports**: Generates detailed JSON reports of all deployments
 - **Multi-Network Support**: Works with any EVM-compatible blockchain
-
-## Prerequisites
-
-- Node.js v16+ and npm
-- An Ethereum wallet with sufficient ETH/native tokens for gas fees
-- RPC endpoint (Alchemy, Infura, local node, etc.)
 
 ## Installation
 
@@ -29,7 +23,7 @@ cd erc20-multi-deployer
 
 2. Install dependencies:
 ```bash
-npm install
+yarn install
 ```
 
 3. Copy the environment example file:
@@ -91,7 +85,7 @@ Edit `tokens.json` to define the tokens you want to deploy:
 Run the deployment script:
 
 ```bash
-npm run deploy
+yarn deploy
 ```
 
 Or directly with Node.js:
@@ -122,7 +116,7 @@ RPC_URL=http://127.0.0.1:8545
 
 3. Run deployment:
 ```bash
-npm run deploy
+yarn deploy
 ```
 
 ## Deployment Process
@@ -142,40 +136,6 @@ After deployment, the script generates:
 - `deployments/deployment-{network}-{timestamp}.json` - Complete deployment report
 - `deployments/latest-addresses.json` - Simple address mapping for integration
 - `deployments/ERC20Token.abi.json` - Contract ABI for interaction
-
-## Network Configuration
-
-### Mainnet
-```env
-RPC_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY
-```
-
-### Testnets
-```env
-# Sepolia
-RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
-
-# Goerli
-RPC_URL=https://eth-goerli.g.alchemy.com/v2/YOUR_KEY
-```
-
-### Layer 2 / Alternative Chains
-```env
-# Polygon
-RPC_URL=https://polygon-rpc.com/
-
-# BSC
-RPC_URL=https://bsc-dataseed.binance.org/
-
-# Arbitrum
-RPC_URL=https://arb1.arbitrum.io/rpc
-
-# Optimism
-RPC_URL=https://mainnet.optimism.io
-
-# Avalanche
-RPC_URL=https://api.avax.network/ext/bc/C/rpc
-```
 
 ## Contract Features
 
@@ -216,33 +176,6 @@ To override gas settings, add to `.env`:
 GAS_PRICE_GWEI=30
 GAS_LIMIT=3000000
 ```
-
-## Security Considerations
-
-1. **Private Key Security**: Never commit `.env` files. Use hardware wallets or secure key management in production
-2. **Contract Verification**: Always verify contracts on Etherscan after deployment
-3. **Initial Distribution**: Double-check recipient addresses before deployment
-4. **Role Management**: Carefully manage admin roles after deployment
-5. **Testing**: Always test on testnets before mainnet deployment
-
-## Troubleshooting
-
-### "Insufficient funds for gas"
-- Ensure your deployer wallet has enough ETH/native tokens
-- Check gas price settings in `.env`
-
-### "Contract deployment failed"
-- Verify RPC endpoint is correct and accessible
-- Check network is not congested
-- Increase gas limit buffer in the script
-
-### "Compilation failed"
-- Ensure all dependencies are installed: `npm install`
-- Check Solidity version compatibility
-
-### "Transaction reverted"
-- Check token parameters are valid (decimals 0-18, valid addresses)
-- Ensure initial supply doesn't exceed uint256 max
 
 ## Example Deployment Output
 
