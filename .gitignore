@@ -1,0 +1,60 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Deployment outputs
+deployments/
+!deployments/.gitkeep
+
+# Hardhat files
+cache/
+artifacts/
+typechain/
+typechain-types/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+coverage.json
+.nyc_output/
+
+# Build files
+build/
+dist/
+out/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Private keys
+*.pem
+*.key
+keystore/
+
+# Local blockchain data
+.ganache/

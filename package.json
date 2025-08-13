@@ -1,0 +1,37 @@
+{
+  "name": "erc20-multi-deployer",
+  "version": "1.0.0",
+  "description": "Production-ready script for deploying multiple ERC20 tokens to EVM chains",
+  "main": "deployTokens.js",
+  "scripts": {
+    "deploy": "node deployTokens.js",
+    "deploy:local": "RPC_URL=http://127.0.0.1:8545 node deployTokens.js",
+    "deploy:custom": "node deployTokens.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "erc20",
+    "ethereum",
+    "blockchain",
+    "deployment",
+    "tokens",
+    "smart-contracts"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0",
+    "solc": "^0.8.23"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
+}
