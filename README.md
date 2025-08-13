@@ -1,8 +1,4 @@
-# ERC20 Multi-Token Deployment Script
-
-A production-ready Node.js script for deploying multiple ERC20 tokens with custom parameters to any EVM-compatible blockchain.
-
-## Testnet erc20 deployer
+# Testnet erc20 deployer
 
 - **Batch Deployment**: Deploy multiple ERC20 tokens in a single execution
 - **Customizable Parameters**: Configure each token's name, symbol, decimals, and initial supply
